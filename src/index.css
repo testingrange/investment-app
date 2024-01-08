@@ -87,3 +87,22 @@ body {
 .center {
   text-align: center;
 }
+
+.user-input-group {
+  /* display: flex; */
+  justify-content:space-evenly;
+}
+
+#info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* .controll-pannel {
+  display: flex;
+} */
+
+.controll-pannel h2{
+  font-size: medium;
+  display: block;
+}
