@@ -93,7 +93,7 @@ body {
   justify-content:space-evenly;
 }
 
-#info {
+.info {
   display: flex;
   justify-content: space-evenly;
 }

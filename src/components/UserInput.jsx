@@ -1,32 +1,58 @@
-export default function UserInput({ onUserInputChange, userData }) {
-
-    return (
-        <>
-            <div id="user-input">
-                <div className="input-group">
-                    <label htmlFor="ininvest">Initial Investment</label>
-                    <input type="number" name="ininvest" id="ininvest" onChange={onUserInputChange}></input>
-                    <label htmlFor="anninvest">Annual Investment</label>
-                    <input type="number" name="anninvest" id="anninvest" onChange={onUserInputChange}></input>
-                </div>
-                <div className="input-group">
-                    <label htmlFor="expret">Expected Return</label>
-                    <input type="number" name="expret" id="expret" min="1" max="100" onChange={onUserInputChange}></input>
-                    <label htmlFor="duration">Duration</label>
-                    <input type="number" name="duration" id="duration" min="1" max="50" onChange={onUserInputChange}></input>
-                </div>
-            </div>
-            <div id='info'>
-                <div className="controll-pannel">
-                    <h2>Initial investment   {userData["ininvest"]}</h2>
-                    <h2>Annual investment   {userData["anninvest"]}</h2>
-                </div>
-                <div className="controll-pannel">
-                    <h2>Expected return   {userData["expret"]}</h2>
-                    <h2>Duration   {userData["duration"]}</h2>
-                </div>
-            </div>
-        </>
-        
-    )
+export default function UserInput({ onChange, userData }) {
+  return (
+      <section id="user-input">
+        <div className="input-group">
+          <p>
+            <label htmlFor="ininvest">Initial Investment</label>
+            <input
+              type="number"
+              required
+              name="ininvest"
+              value={userData["ininvest"]}
+              id="ininvest"
+              onChange={(event) => onChange("ininvest", event.target.value)}
+            ></input>
+          </p>
+          <p>
+            <label htmlFor="anninvest">Annual Investment</label>
+            <input
+              type="number"
+              required
+              name="anninvest"
+              value={userData["anninvest"]}
+              id="anninvest"
+              onChange={(event) => onChange("anninvest", event.target.value)}
+            ></input>
+          </p>
+        </div>
+        <div className="input-group">
+          <p>
+            <label htmlFor="expret">Expected Return</label>
+            <input
+              type="number"
+              required
+              name="expret"
+              value={userData["expret"]}
+              id="expret"
+              min="1"
+              max="100"
+              onChange={(event) => onChange("expret", event.target.value)}
+            ></input>
+          </p>
+          <p>
+            <label htmlFor="duration">Duration</label>
+            <input
+              type="number"
+              required
+              name="duration"
+              value={userData.duration}
+              id="duration"
+              min="1"
+              max="50"
+              onChange={(event) => onChange("duration", event.target.value)}
+            ></input>
+          </p>
+        </div>
+      </section>
+  );
 }
